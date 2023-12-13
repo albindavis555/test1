@@ -22,7 +22,19 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromePath'],
+    customLaunchers: {
+    ChromePath: {
+    base: 'Chrome',
+    flags: [
+      '--headless',          // Run Chrome in headless mode (no GUI)
+      '--disable-gpu',       // Disable GPU hardware acceleration
+      '--no-sandbox',        // Disable sandboxing for Linux
+      '--disable-software-rasterizer',  // Disable software rasterizer
+      // Add more flags as needed
+    ]
+  }
+},
     singleRun: false,
     restartOnFileChange: true
   });
