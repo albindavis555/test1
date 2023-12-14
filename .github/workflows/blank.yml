@@ -27,7 +27,7 @@ jobs:
     - run: npm run build --if-present
     
     - name: Build Docker Image
-      run: docker build -t albin05/demo:1.0
+      run: docker build -t albin05/demo:1.0 src
     - name: Docker login
       run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: docker push
